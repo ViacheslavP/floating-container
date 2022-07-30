@@ -1,0 +1,15 @@
+{
+	"TestClass": {
+		"className": "org.viapivov.loader.NoConstructorClass"
+	},
+	"FooClass": {
+		"className": "org.viapivov.loader.OneObjectArgConstructorClass",
+		"arg1": {
+			"name": "test"
+		}
+	},
+	"BarClass": {
+		"className": "org.viapivov.loader.OneObjectArgConstructorClass",
+		"arg1": "TestClass"
+	}
+}
