@@ -30,4 +30,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: Bytecode
-        path: /target/floating-container-0.0.1-SNAPSHOT-jar-with-dependencies.jar
+        path: /home/runner/work/floating-container/floating-container/target/floating-container-0.0.1-SNAPSHOT-jar-with-dependencies.jar
