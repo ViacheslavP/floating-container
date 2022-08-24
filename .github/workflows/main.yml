@@ -29,5 +29,5 @@ jobs:
     - name: Artifact
       uses: actions/upload-artifact@v3
       with:
-        name: Bytecode
+        name: Floating-Container-0.0.1-SNAPSHOT
         path: /home/runner/work/floating-container/floating-container/target/floating-container-0.0.1-SNAPSHOT-jar-with-dependencies.jar
