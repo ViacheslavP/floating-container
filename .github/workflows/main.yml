@@ -4,24 +4,30 @@
 
 name: Java CI with Maven
 
-on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+on: [push]
 
 jobs:
-  build:
+  build_and_test:
 
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - name: Prepare
+      uses: actions/checkout@v3
     - name: Set up JDK 11
       uses: actions/setup-java@v3
       with:
         java-version: '11'
         distribution: 'temurin'
         cache: maven
-    - name: Build with Maven
-      run: mvn -B package --file pom.xml
+    - name: Compile
+      run: mvn compile
+    - name: Test
+      run: mvn test
+    - name: Build
+      run: mvn package
+    - name: Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: Floating-Container-0.0.1-SNAPSHOT
+        path: /home/runner/work/floating-container/floating-container/target/floating-container-0.0.1-SNAPSHOT-jar-with-dependencies.jar
